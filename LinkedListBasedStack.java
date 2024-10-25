@@ -11,6 +11,7 @@ public class LinkedListBasedStack {
         Node newNode = new Node(value);
         newNode.next = top;
         top = newNode;
+        System.out.println("Pushed: " + value);
     }
 
     public int pop() {
@@ -33,5 +34,19 @@ public class LinkedListBasedStack {
 
     public boolean isEmpty() {
         return (top == null);
+    }
+
+    public void display() {
+        if (isEmpty()) {
+            System.out.println("Stack is empty!");
+            return;
+        }
+        System.out.print("Stack elements: ");
+        Node current = top;
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+        System.out.println();
     }
 }
